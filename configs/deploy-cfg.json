@@ -1,0 +1,12 @@
+{
+  "ed25519": {
+    "modules": [
+      {
+        "name": "block_formatter",
+        "path": "artifacts/block_formatter.wasm",
+        "logger_enabled": true,
+        "mem_page_count": 100
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+-- 1. Get all nft datasets using DHT.get_datasets()
+-- 2. Loop all datasets
+-- 3.   Get DAG from ipfs
+-- 4. Join
+-- 5. Send data array to be formated to json
+-- return Json
