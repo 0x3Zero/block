@@ -1,6 +1,6 @@
 use marine_rs_sdk::marine;
 use serde::{Deserialize, Serialize};
-use serde_json::{to_value, Value};
+use serde_json::{Value};
 #[marine]
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct Block {
@@ -10,13 +10,15 @@ pub struct Block {
     pub previous: String,
 }
 
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct BlockContent {
+  pub name: String,
+  pub data: Value,
+}
 impl Block {
     pub fn to_value(block: Block) -> (String, Value) {
-        let content_json = match to_value(block.content.clone()) {
-            Ok(data) => data,
-            Err(_) => serde_json::from_str(&block.content).unwrap_or_default(),
-        };
-
-        (block.name, content_json)
+        let content: BlockContent = serde_json::from_str(&block.content).unwrap();
+       
+        (content.name, content.data)
     }
 }
