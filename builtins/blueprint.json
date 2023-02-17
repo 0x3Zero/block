@@ -1,0 +1,6 @@
+{
+  "name": "block_formatter",
+  "dependencies": [
+    "name:block_formatter"
+  ]
+}
