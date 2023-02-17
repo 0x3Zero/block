@@ -6,7 +6,7 @@ data Block:
   content: string
   previous: string
 
-service BlockFormatter("Block_formatter"):
+service BlockFormatter("block_formatter"):
   deserialize(json: string) -> Block
   format(format_type: string, blocks: []Block) -> string
   serialize(name: string, content: string, previous_cid: string) -> string

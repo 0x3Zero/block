@@ -1,0 +1,5 @@
+{
+  "name": "block_formatter",
+  "max_heap_size": "8 MiB",
+  "logger_enabled": true
+}

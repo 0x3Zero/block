@@ -11,6 +11,8 @@ marine build --release
 mkdir -p artifacts
 rm -f artifacts/*.wasm
 cp target/wasm32-wasi/release/block_formatter.wasm artifacts/
-marine aqua artifacts/block_formatter.wasm -s block_formatter -i Block_formatter > ./aqua/block_formatter.aqua
+marine aqua artifacts/block_formatter.wasm -s block_formatter -i block_formatter > ./aqua/block_formatter.aqua
+
+cp -f artifacts/*.wasm builtins/
 
 RUST_LOG="info" mrepl --quiet Config.toml
